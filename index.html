@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to My YouTube Channel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Heading -->
+        <h1>Subscribe to Floppys YouTube Channel!</h1>
+        <p>Don't miss out on the latest content. Click the button below to subscribe now.</p>
+        
+        <!-- YouTube Button -->
+        <a href="https://www.youtube.com/channel/UCmTxpFhDfAgDYKGqqjdHJBw?sub_confirmation=1" target="_blank">
+            <button class="subscribe-button">Subscribe Now</button>
+        </a>
+        
+        <!-- Countdown Timer -->
+        <div class="countdown">
+            <p>Special giveaway starts in:</p>
+            <div id="timer">
+                <span id="days">00</span> Days 
+                <span id="hours">00</span> Hours 
+                <span id="minutes">00</span> Minutes 
+                <span id="seconds">00</span> Seconds
+            </div>
+        </div>
+        <div class="roblox-status">
+            <h2>Check Roblox Player Status</h2>
+            <input type="text" id="gamergx123S4" placeholder="Enter Roblox Username">
+            <button id="checkStatus">Check Status</button>
+            <p id="statusResult">Enter a username to check their status.</p>
+        </div>
+        
+
+        <!-- Video Embed -->
+        <div class="video-section">
+            <h2>Check Out Floppys Latest Video</h2>
+            <iframe width="560" height="315" 
+                src="https://www.youtube.com/watch?v=EZ7aNnk6WCo" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-media">
+            <p>Follow me on social media for updates:</p>
+            <a href="#" class="social-link">Facebook</a> |
+            <a href="#" class="social-link">Twitter</a> |
+            <a href="#" class="social-link">Instagram</a>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer Script
+        const countdown = () => {
+            const now = new Date().getTime();
+            const eventDate = new Date('2024-01-01T00:00:00').getTime(); // Adjust date as needed
+            const timeLeft = eventDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000)) / 1000);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        };
+
+        setInterval(countdown, 1000);
+    </script>
+</body>
+</html>
